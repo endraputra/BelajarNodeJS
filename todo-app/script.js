@@ -16,6 +16,7 @@ form.addEventListener('submit', (e) => {
     addTodo()
 })
 
+// menambahkan todo
 function addTodo(todo) {
     let  todoText = input.value
 
@@ -31,12 +32,14 @@ function addTodo(todo) {
 
         todoEl.innerText = todoText
 
+        //klik kiri untuk menandai todo sudah dikerjakan
         todoEl.addEventListener('click', () => {
             todoEl.classList.toggle('completed')
 
             updateLS()
         })
 
+        //klik kanan digunakan untuk menghapus daftar todo
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault()
 
@@ -53,6 +56,7 @@ function addTodo(todo) {
     }
 }
 
+// menyimpan todo yang sudah kita tambahkan ke daftar
 function updateLS() {
     const todosEl = document.querySelectorAll('li')
 

@@ -3,6 +3,7 @@ const hoursEl = document.getElementById('hours')
 const minutesEl = document.getElementById('minutes')
 const secondsEl = document.getElementById('seconds')
 
+// inisiasi tanggal tahun baru
 const newYears = '1 Jan 2023'
 
 function countDown() {

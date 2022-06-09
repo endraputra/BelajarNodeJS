@@ -1,9 +1,11 @@
+//mendapatkan API github
 const APIURL = 'https://api.github.com/users/'
 
 const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 
+//pemanggilan function agar tampilan awal akun github kita
 getUser('endraputra')
 
 async function getUser(username) {
@@ -15,6 +17,7 @@ async function getUser(username) {
     getRepos(username)
 }
 
+//menampilkan repository github
 async function getRepos(username) {
     const resp = await fetch(APIURL + username + '/repos')
     const respData = await resp.json()
@@ -22,6 +25,7 @@ async function getRepos(username) {
     addReposToCard(respData)
 }
 
+//menampilkan kartu akun github
 function createUserCard(user) {
     const cardHTML = `
         <div class="card">
@@ -46,6 +50,7 @@ function createUserCard(user) {
     main.innerHTML = cardHTML
 }
 
+//menambahkan repository ke kartu akun
 function addReposToCard(repos) {
     const reposEl = document.getElementById('repos')
 

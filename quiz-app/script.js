@@ -53,6 +53,7 @@ const submitBtn = document.getElementById("submit");
 let currentQuiz = 0;
 let score = 0;
 
+//menampilkan kuis
 loadQuiz();
 
 function loadQuiz() {
@@ -67,6 +68,7 @@ function loadQuiz() {
     d_text.innerText = currentQuizData.d;
 }
 
+//memilih jawaban yg benar
 function getSelected() {
     let answer = undefined;
 
@@ -79,12 +81,14 @@ function getSelected() {
     return answer;
 }
 
+//digunakan untuk deselect jawaban
 function deselectAnswers() {
     answerEls.forEach((answerEl) => {
         answerEl.checked = false;
     });
 }
 
+//digunakan untuk berlanjut ke pertanyaan selanjutnya, jika jawaban benar maka score bertambah 1
 submitBtn.addEventListener("click", () => {
     // check to see the answer
     const answer = getSelected();
